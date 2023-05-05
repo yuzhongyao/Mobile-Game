@@ -7,19 +7,16 @@ public class DestroyObstacle : MonoBehaviour
     Rigidbody2D rb;
     GameObject slime;
     BoxCollider2D collider;
+    SlimeStats stats;
     // Start is called before the first frame update
     void Start()
     {
         slime = GameObject.Find("Slime");
         rb = slime.GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
+        stats = new SlimeStats();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void OnCollisionEnter2D(Collision2D c)
     {
         StartCoroutine("Destroy");
@@ -27,9 +24,9 @@ public class DestroyObstacle : MonoBehaviour
     IEnumerator Destroy()
     {
         collider.enabled = false;
-        yield return new WaitForSeconds(1f);
-        Vector2 v = new Vector2(50, 0);
-        rb.AddForce(v); //this makes the slime move forward, don't know the math behind addforce though
+        yield return new WaitForSeconds(stats.Strength);//amount of time it will take for slime to start moving again, the formula still needs to be figured out
+        Vector2 v = new Vector2(stats.Speed, 0);
+        rb.velocity = v; //this makes the slime move forward, don't know the math behind addforce though
         Destroy(gameObject);
        
     }

@@ -5,17 +5,24 @@ using UnityEngine;
 public class SlimeMovement : MonoBehaviour
 {
      Rigidbody2D rb;
+    SlimeStats stats;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Vector2 v = new Vector2(50, 0);
-        rb.AddForce(v); //this makes the slime move forward, don't know the math behind addforce though
+        stats = new SlimeStats();
+        Vector2 v = new Vector2(stats.Speed, 0);
+        rb.velocity = v; //this makes the slime move forward, don't know the math behind addforce though
     }
-
-    // Update is called once per frame
-    void Update()
+    public void DoAfterCollision()
     {
-        
+        StartCoroutine("SpeedUp");
+       
+    }
+    IEnumerator SpeedUp()
+    {
+        yield return new WaitForSeconds(stats.Strength);
+        Vector2 v = new Vector2(stats.Speed, 0);
+        rb.velocity = v; //this makes the slime move forward, don't know the math behind addforce though
     }
 }
