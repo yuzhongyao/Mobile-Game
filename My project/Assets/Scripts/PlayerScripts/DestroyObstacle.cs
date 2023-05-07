@@ -26,7 +26,7 @@ public class DestroyObstacle : MonoBehaviour
         collider.enabled = false;
         yield return new WaitForSeconds(stats.Strength);//amount of time it will take for slime to start moving again, the formula still needs to be figured out
         Vector2 v = new Vector2(stats.Speed, 0);
-        rb.velocity = v; //this makes the slime move forward, don't know the math behind addforce though
+        rb.velocity = v; //this makes the slime move forward
         Destroy(gameObject);
        
     }

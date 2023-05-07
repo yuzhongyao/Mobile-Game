@@ -22,9 +22,9 @@ public class SlimeMovement : MonoBehaviour
     }
     IEnumerator SpeedUp()
     {
-        yield return new WaitForSeconds(stats.Strength);
+        yield return new WaitForSeconds(1f);
         Vector2 v = new Vector2(stats.Speed, 0);
-        rb.velocity = v; //this makes the slime move forward, don't know the math behind addforce though
+        rb.velocity = v; //this makes the slime move forward
     }
     public void Sprint()//method for slime sprinting
     {

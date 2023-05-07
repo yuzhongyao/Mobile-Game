@@ -20,5 +20,10 @@ public class CollisionWithObst : MonoBehaviour
             slime.GetComponent<SlimeMovement>().DoAfterCollision();
             Destroy(gameObject);
         }
+        else if (c.gameObject.tag == "AI")
+        {
+            Destroy(gameObject);
+        }
+        //Destroy(gameObject);
     }
 }
