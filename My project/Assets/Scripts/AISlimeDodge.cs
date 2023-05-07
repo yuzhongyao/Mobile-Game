@@ -9,6 +9,7 @@ public class AISlimeDodge : MonoBehaviour
     int baseAwareness = 65;
     BoxCollider2D collider;
     SpriteRenderer sr;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +38,13 @@ public class AISlimeDodge : MonoBehaviour
     IEnumerator Dodge()
     {
         collider.enabled = false;
+        Color dodgeColor;
+        dodgeColor = sr.color;
+        dodgeColor.a = 0.5f;
+        sr.color = dodgeColor;
         yield return new WaitForSeconds(0.7f);
         collider.enabled = true;
+        dodgeColor.a = 1f;
+        sr.color = dodgeColor;
     }
 }
