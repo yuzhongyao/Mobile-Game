@@ -4,21 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DisableDodge : MonoBehaviour
 {
-    public Button b;
-    
+    public Button dodgeButton;
+    public Button sprintButton;
 
     void OnTriggerStay2D(Collider2D c)
     {
         if(c.tag == "Player")
         {
-            b.interactable = false;
+            dodgeButton.interactable = false;
+            sprintButton.interactable = false;
         }
     }
     void OnTriggerExit2D(Collider2D c)
     {
         if (c.tag == "Player")
         {
-            b.interactable = true;
+            dodgeButton.interactable = true;
+            sprintButton.interactable = true;
         }
     }
 }
