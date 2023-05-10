@@ -36,4 +36,5 @@ public class SlimeMovement : MonoBehaviour
         yield return new WaitForSeconds(stats.Sprint*0.8f);
         rb.velocity = new Vector2(stats.Speed, 0);
     }
+   
 }
