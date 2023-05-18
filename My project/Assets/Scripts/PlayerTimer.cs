@@ -49,4 +49,7 @@ public class PlayerTimer : MonoBehaviour
         }
         t.text = mins.ToString("00") + " : " + seconds.ToString("00");
     }
+    /*Tracks the time it takes for the player to cross the finish line, when the player hits the goal, this script will send
+     a signal to the placings script, which should put it in its proper position. We do know that there are a few bugs that need to be 
+     addressed. I mentioned trying a fix that revolves around recording the times and sorting them when the race is finished. */
 }

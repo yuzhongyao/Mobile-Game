@@ -23,4 +23,6 @@ public class DisableDodge : MonoBehaviour
             sprintButton.interactable = true;
         }
     }
+    /*This code disables the buttons when they're about to hit a destroyable obstacle. This is to make sure the player can't dodge through the obstacle.
+     *The sprint button is disabled because of a flaw in the code allowing the player to sprint through the obstacle iirc */
 }

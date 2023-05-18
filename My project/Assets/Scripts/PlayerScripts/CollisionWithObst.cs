@@ -17,7 +17,7 @@ public class CollisionWithObst : MonoBehaviour
         {
             slime.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             //if the player touches the obstacle in any way, the velocity will be set to 0
-            slime.GetComponent<SlimeMovement>().DoAfterCollision();
+            slime.GetComponent<SlimeMovement>().DoAfterCollision();//calls DoAfterCollsion in the SlimeMovement class attached to gameobject slime
             Destroy(gameObject);
         }
         else if (c.gameObject.tag == "AI")
@@ -26,4 +26,7 @@ public class CollisionWithObst : MonoBehaviour
         }
         //Destroy(gameObject);
     }
+    /*This code was supposed to handle what happens when a slime hits a dodgeable obstacle. However, I coded the AI part differently because I realized
+     that there are going to be multiple AI slimes. I think a decent fix for this would be to code the player slime part so that it matches up with the
+    AI slime more (use AISlimeMovement and SlimeMovement). Feel free to fix this in your own way if you think of one.*/
 }

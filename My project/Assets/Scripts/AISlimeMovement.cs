@@ -31,12 +31,12 @@ public class AISlimeMovement : MonoBehaviour
     }
     IEnumerator Recover()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1f);//wait for 1 second before calling MoveAgain()
         MoveAgain();
     }
     IEnumerator BreakObstacle()
     {
-        yield return new WaitForSeconds(strength);
+        yield return new WaitForSeconds(strength);//wait for time determined by strength stat before moving again
         MoveAgain();
     }
     void MoveAgain()

@@ -30,5 +30,5 @@ public class DistanceToGoal : MonoBehaviour
         }
         t.text = name+": "+ distance.ToString("#.##");
     }
-    
+    /*I don't think this code is very relevant. It was just something I tried when I was doing the placing system*/
 }
