@@ -38,16 +38,18 @@ public class PlayerTimer : MonoBehaviour
             placingsPanel.GetComponent<Placings>().setPosition(this.gameObject.name);
         }
     }
-    public void TimerUpdate(float totalSeconds)
+    public void TimerUpdate(float time)
     {
-        int mins = Mathf.FloorToInt(totalSeconds / 60f);
-        int seconds = Mathf.RoundToInt(totalSeconds % 60f);
-        if (seconds == 60)
+        int mins = Mathf.FloorToInt(time / 60f);
+        //int seconds = Mathf.RoundToInt(time % 60f);
+        float seconds = time%60f;
+        if (seconds == 60f)
         {
             seconds = 0;
             mins += 1;
         }
-        t.text = mins.ToString("00") + " : " + seconds.ToString("00");
+        t.text = mins.ToString("00") + " : " + seconds.ToString("F2");
+        
     }
     /*Tracks the time it takes for the player to cross the finish line, when the player hits the goal, this script will send
      a signal to the placings script, which should put it in its proper position. We do know that there are a few bugs that need to be 
