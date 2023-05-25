@@ -35,7 +35,8 @@ public class PlayerTimer : MonoBehaviour
         {
             finished = true; setPosition = true;
             counter.GetComponent<ResultPanel>().Count();
-            placingsPanel.GetComponent<Placings>().setPosition(this.gameObject.name);
+            placingsPanel.GetComponent<Placings>().setPosition(this.gameObject.name,time);
+            Debug.Log("player finish");
         }
     }
     public void TimerUpdate(float time)

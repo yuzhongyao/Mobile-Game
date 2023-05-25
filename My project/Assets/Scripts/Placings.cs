@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Placings : MonoBehaviour
 {
-    public Text[] Times = new Text[3];
+     public Text[] Times = new Text[3];
+    //public List<float> Times = new List<float>();
     int i = 0;
     
     // Start is called before the first frame update
@@ -20,16 +21,16 @@ public class Placings : MonoBehaviour
     {
         
     }
-    public void setPosition(string name)
+    public void setPosition(string name,float time)
     {
        if(Times[i].text == "")
         {
-            Times[i].text = name;
+            Times[i].text = name + " , " + time.ToString("F2"); 
         }
        else if(Times[i].text != "")
         {
             i++;
-            Times[i].text = name;
+            Times[i].text = name + " , " +time.ToString("F2");
         }
        
     }
