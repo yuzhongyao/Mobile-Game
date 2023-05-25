@@ -50,6 +50,6 @@ public class AITimer : MonoBehaviour
             seconds = 0;
             mins += 1;
         }
-        t.text = mins.ToString("00") + " : " + seconds.ToString("F2");
+        t.text = mins.ToString("00") + " : " + seconds.ToString("F4");
     }
 }

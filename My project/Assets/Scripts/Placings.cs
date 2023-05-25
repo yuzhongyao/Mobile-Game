@@ -25,12 +25,12 @@ public class Placings : MonoBehaviour
     {
        if(Times[i].text == "")
         {
-            Times[i].text = name + " , " + time.ToString("F2"); 
+            Times[i].text = name + " , " + time.ToString("F4"); 
         }
        else if(Times[i].text != "")
         {
             i++;
-            Times[i].text = name + " , " +time.ToString("F2");
+            Times[i].text = name + " , " +time.ToString("F4");
         }
        
     }

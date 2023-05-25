@@ -49,7 +49,7 @@ public class PlayerTimer : MonoBehaviour
             seconds = 0;
             mins += 1;
         }
-        t.text = mins.ToString("00") + " : " + seconds.ToString("F2");
+        t.text = mins.ToString("00") + " : " + seconds.ToString("F4");
         
     }
     /*Tracks the time it takes for the player to cross the finish line, when the player hits the goal, this script will send
