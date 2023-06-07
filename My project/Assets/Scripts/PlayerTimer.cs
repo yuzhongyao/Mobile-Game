@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerTimer : MonoBehaviour
 {
-    public Text t;
+    //public Text t;
+    Text t;
     float time = 0f;
     bool finished;
     bool setPosition;
@@ -17,6 +18,7 @@ public class PlayerTimer : MonoBehaviour
         setPosition = false;
         counter = GameObject.Find("SlimeCounter");
         placingsPanel = GameObject.Find("Placings");
+        t = GameObject.Find("PlayerTimer").GetComponent<Text>();
     }
 
     // Update is called once per frame
