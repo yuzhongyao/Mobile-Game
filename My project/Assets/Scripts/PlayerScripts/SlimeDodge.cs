@@ -9,7 +9,7 @@ public class SlimeDodge : MonoBehaviour
     SpriteRenderer sr;
     void Start()
     {
-        slime = GameObject.Find("Slime");
+        slime = GameObject.FindWithTag("Player");
         collider = slime.GetComponent<BoxCollider2D>();
         sr = slime.GetComponent<SpriteRenderer>();
     }

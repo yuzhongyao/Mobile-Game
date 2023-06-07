@@ -11,10 +11,11 @@ public class DestroyObstacle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slime = GameObject.Find("Slime");
+        slime = GameObject.FindWithTag("Player");
         rb = slime.GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
-        stats = new SlimeStats();
+        //stats = new SlimeStats();
+        stats = slime.GetComponent<SlimeStats>();
     }
 
     void OnCollisionEnter2D(Collision2D c)

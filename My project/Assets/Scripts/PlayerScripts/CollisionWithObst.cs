@@ -8,7 +8,7 @@ public class CollisionWithObst : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slime = GameObject.Find("Slime");
+        slime = GameObject.FindWithTag("Player");
     }
 
     void OnCollisionEnter2D(Collision2D c)

@@ -5,10 +5,12 @@ using UnityEngine.UI;
 public class SprintCooldown : MonoBehaviour
 {
     SlimeStats stats;
+    GameObject slime;
     public Button sprintButton;
     void Start()
     {
-        stats = new SlimeStats();
+        slime = GameObject.FindWithTag("Player");
+        stats = slime.GetComponent<SlimeStats>();
     }
     public void StartCooldown()
     {

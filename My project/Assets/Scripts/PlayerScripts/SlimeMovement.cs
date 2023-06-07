@@ -11,7 +11,7 @@ public class SlimeMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        stats = new SlimeStats();
+        stats = GetComponent<SlimeStats>();
         Vector2 v = new Vector2(stats.Speed, 0);
         rb.velocity = v; //this makes the slime move forward
     }
