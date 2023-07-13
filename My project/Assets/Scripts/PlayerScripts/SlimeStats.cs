@@ -5,8 +5,8 @@ using System;
 public class SlimeStats : MonoBehaviour
 {
    
-    [SerializeField] public int Speed;
-    [SerializeField] public int Strength;
-    [SerializeField] public int Awareness;
-    [SerializeField] public int Sprint;
+    [SerializeField] public int Speed = 5;
+    [SerializeField] public int Strength= 1;
+    [SerializeField] public int Awareness = 2;
+    [SerializeField] public int Sprint = 1;
 }
