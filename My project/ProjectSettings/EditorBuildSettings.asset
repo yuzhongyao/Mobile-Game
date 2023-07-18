@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/CharSelect.unity
     guid: b06d9e36ccbf3ae49a0b330ac5a9fc60
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 46d9de67f5c17ea42827e2a502e43956
+  - enabled: 1
+    path: Assets/Scenes/SlimePage.unity
+    guid: 10ed35fae60682840a989f1220aea67f
+  - enabled: 1
     path: Assets/Scenes/Prototype.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

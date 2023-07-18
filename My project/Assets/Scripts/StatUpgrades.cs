@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class StatUpgrades : MonoBehaviour
 {
-    SlimeStats stats;
+    static SlimeStats stats;
     public TextMeshProUGUI strength;
     public TextMeshProUGUI speed;
     public TextMeshProUGUI awareness;
@@ -134,5 +135,17 @@ public class StatUpgrades : MonoBehaviour
         }
         sprint.text = tmpSpr.ToString();
         skillPointsText.text = "Skill Points: " + skillPoints;
+    }
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void ApplyChanges()
+    {
+        /* stats.Strength = tmpStr;
+         stats.Speed = tmpSpe;
+         stats.Awareness = tmpAwe;
+         stats.Sprint = tmpSpr;*/
+        stats.SetChanges(tmpStr,tmpSpe,tmpAwe,tmpSpr);
     }
 }
