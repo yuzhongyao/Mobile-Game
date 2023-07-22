@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c147c157b1c394199b87925dea30d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PStats: {fileID: 11400000, guid: b86cacf51e1b1524d80ed37f10730279, type: 2}
 --- !u!1 &649505917681390332
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,4 +294,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac907b2a8c619204fa6f308de795fbb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  b: {fileID: 0}
+  dodgeButton: {fileID: 0}
+  sprintButton: {fileID: 0}

@@ -1381,6 +1381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79c75571be8bc04ebb04c20027eb313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PStats: {fileID: 11400000, guid: b86cacf51e1b1524d80ed37f10730279, type: 2}
   strength: {fileID: 2054416509}
   speed: {fileID: 2083669188}
   awareness: {fileID: 868527115}

@@ -6,7 +6,8 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class StatUpgrades : MonoBehaviour
 {
-    static SlimeStats stats;
+    //static SlimeStats stats;
+    public PlayerStats PStats;
     public TextMeshProUGUI strength;
     public TextMeshProUGUI speed;
     public TextMeshProUGUI awareness;
@@ -20,13 +21,17 @@ public class StatUpgrades : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stats = GetComponent<SlimeStats>();
+        //stats = GetComponent<SlimeStats>();
         /*tmp variable will be the value that is affected by changes on the stats upgrade screen, only when the CONFIRM button
          is pressed is when the changes are applied to the variables in class SlimeStats*/
-        tmpStr = stats.Strength;
+       /* tmpStr = stats.Strength;
         tmpSpe = stats.Speed;
         tmpAwe = stats.Awareness;
-        tmpSpr = stats.Sprint;
+        tmpSpr = stats.Sprint;*/
+        tmpStr = PStats.Strength;
+        tmpSpe = PStats.Speed;
+        tmpAwe = PStats.Awareness;
+        tmpSpr = PStats.Sprint;
         strength.text = tmpStr.ToString();
         speed.text = tmpSpe.ToString();
         awareness.text = tmpAwe.ToString();
@@ -50,7 +55,7 @@ public class StatUpgrades : MonoBehaviour
     }
     public void SubStr()
     {
-        if (tmpStr <= stats.Strength)
+        if (tmpStr <= PStats.Strength)
         {
             tmpStr = tmpStr;
            // strength.faceColor = new Color32(0, 0, 0, 255);
@@ -76,7 +81,7 @@ public class StatUpgrades : MonoBehaviour
     }
     public void SubSpe()
     {
-        if (tmpSpe <= stats.Speed)
+        if (tmpSpe <= PStats.Speed)
         {
             tmpSpe = tmpSpe;
         }
@@ -100,7 +105,7 @@ public class StatUpgrades : MonoBehaviour
     }
     public void SubAwe()
     {
-        if (tmpAwe <= stats.Awareness)
+        if (tmpAwe <= PStats.Awareness)
         {
             tmpAwe = tmpAwe;
         }
@@ -124,7 +129,7 @@ public class StatUpgrades : MonoBehaviour
     }
     public void SubSpr()
     {
-        if (tmpSpr <= stats.Sprint)
+        if (tmpSpr <= PStats.Sprint)
         {
             tmpSpr = tmpSpr;
         }
@@ -146,6 +151,10 @@ public class StatUpgrades : MonoBehaviour
          stats.Speed = tmpSpe;
          stats.Awareness = tmpAwe;
          stats.Sprint = tmpSpr;*/
-        stats.SetChanges(tmpStr,tmpSpe,tmpAwe,tmpSpr);
+        PStats.Strength = tmpStr;
+        PStats.Speed = tmpSpe;
+        PStats.Awareness = tmpAwe;
+        PStats.Sprint = tmpSpr; 
+       // stats.SetChanges(tmpStr,tmpSpe,tmpAwe,tmpSpr);
     }
 }
