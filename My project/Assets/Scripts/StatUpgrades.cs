@@ -13,7 +13,7 @@ public class StatUpgrades : MonoBehaviour
     public TextMeshProUGUI awareness;
     public TextMeshProUGUI sprint;
     public TextMeshProUGUI skillPointsText;
-    public int skillPoints = 3;
+    public int tmpskillPoints;
     public int tmpStr;
     public int tmpSpe;
     public int tmpAwe;
@@ -32,22 +32,23 @@ public class StatUpgrades : MonoBehaviour
         tmpSpe = PStats.Speed;
         tmpAwe = PStats.Awareness;
         tmpSpr = PStats.Sprint;
+        tmpskillPoints = PStats.SkillPoints;
         strength.text = tmpStr.ToString();
         speed.text = tmpSpe.ToString();
         awareness.text = tmpAwe.ToString();
         sprint.text = tmpSpr.ToString();
-        skillPointsText.text = "Skill Points: " + skillPoints;
+        skillPointsText.text = "Skill Points: " + tmpskillPoints;
     }
 
     public void AddStr()
     {
-        if (skillPoints > 0)
+        if (tmpskillPoints > 0)
         {
             tmpStr++;
-            skillPoints--;
+            tmpskillPoints--;
         }
         strength.text = tmpStr.ToString();
-        skillPointsText.text = "Skill Points: " + skillPoints;
+        skillPointsText.text = "Skill Points: " + tmpskillPoints;
         /*if(tmpStr > stats.Strength)
         {
             strength.faceColor = new Color32(50,50,200,255);
@@ -63,21 +64,21 @@ public class StatUpgrades : MonoBehaviour
         else
         {
             tmpStr--;
-            skillPoints++;
+            tmpskillPoints++;
         }
         strength.text = tmpStr.ToString();
-        skillPointsText.text = "Skill Points: " + skillPoints;
+        skillPointsText.text = "Skill Points: " + tmpskillPoints;
     }
 
     public void AddSpe()
     {
-        if (skillPoints > 0)
+        if (tmpskillPoints > 0)
         {
             tmpSpe++;
-            skillPoints--;
+            tmpskillPoints--;
         }
         speed.text = tmpSpe.ToString();
-        skillPointsText.text = "Skill Points: " + skillPoints;
+        skillPointsText.text = "Skill Points: " + tmpskillPoints;
     }
     public void SubSpe()
     {
@@ -88,20 +89,20 @@ public class StatUpgrades : MonoBehaviour
         else
         {
             tmpSpe--;
-            skillPoints++;
+            tmpskillPoints++;
         }
         speed.text = tmpSpe.ToString();
-        skillPointsText.text = "Skill Points: " + skillPoints;
+        skillPointsText.text = "Skill Points: " + tmpskillPoints;
     }
     public void AddAwe()
     {
-        if (skillPoints > 0)
+        if (tmpskillPoints > 0)
         {
             tmpAwe++;
-            skillPoints--;
+            tmpskillPoints--;
         }
         awareness.text = tmpAwe.ToString();
-        skillPointsText.text = "Skill Points: " + skillPoints;
+        skillPointsText.text = "Skill Points: " + tmpskillPoints;
     }
     public void SubAwe()
     {
@@ -112,20 +113,20 @@ public class StatUpgrades : MonoBehaviour
         else
         {
             tmpAwe--;
-            skillPoints++;
+            tmpskillPoints++;
         }
         awareness.text = tmpAwe.ToString();
-        skillPointsText.text = "Skill Points: " + skillPoints;
+        skillPointsText.text = "Skill Points: " + tmpskillPoints;
     }
     public void AddSpr()
     {
-        if (skillPoints > 0)
+        if (tmpskillPoints > 0)
         {
             tmpSpr++;
-            skillPoints--;
+            tmpskillPoints--;
         }
         sprint.text = tmpSpr.ToString();
-        skillPointsText.text = "Skill Points: " + skillPoints;
+        skillPointsText.text = "Skill Points: " + tmpskillPoints;
     }
     public void SubSpr()
     {
@@ -136,10 +137,10 @@ public class StatUpgrades : MonoBehaviour
         else
         {
             tmpSpr--;
-            skillPoints++;
+            tmpskillPoints++;
         }
         sprint.text = tmpSpr.ToString();
-        skillPointsText.text = "Skill Points: " + skillPoints;
+        skillPointsText.text = "Skill Points: " + tmpskillPoints;
     }
     public void ReturnToMainMenu()
     {
@@ -154,7 +155,8 @@ public class StatUpgrades : MonoBehaviour
         PStats.Strength = tmpStr;
         PStats.Speed = tmpSpe;
         PStats.Awareness = tmpAwe;
-        PStats.Sprint = tmpSpr; 
+        PStats.Sprint = tmpSpr;
+        PStats.SkillPoints = tmpskillPoints;
        // stats.SetChanges(tmpStr,tmpSpe,tmpAwe,tmpSpr);
     }
 }
