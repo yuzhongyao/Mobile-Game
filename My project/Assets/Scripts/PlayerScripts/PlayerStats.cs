@@ -10,4 +10,5 @@ public class PlayerStats : ScriptableObject
     public int Awareness = 2;
     public int Sprint = 1;
     public int SkillPoints = 3;
+    private void OnEnable() => hideFlags = HideFlags.DontUnloadUnusedAsset;
 }
